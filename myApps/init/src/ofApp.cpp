@@ -1,23 +1,9 @@
 #include "ofApp.h"
 
-float start_x[1000];
-float start_y[1000];
-float end_x[1000];
-float end_y[1000];
-
 //--------------------------------------------------------------
 void ofApp::setup(){
-	ofBackground(47, 47, 47);
-	ofEnableAlphaBlending();
-	ofSetColor(180, 23, 32, 127);
-	ofSetCircleResolution(64);
-
-	for (int i = 0; i < 1000; i++) {
-		start_x[i] = ofRandom(1, ofGetWidth());
-		start_y[i] = ofRandom(1, ofGetHeight());
-		end_x[i] = ofRandom(1, ofGetHeight());
-		end_y[i] = ofRandom(1, ofGetWidth());
-	}
+	ofSetCircleResolution(3);
+	ofBackground(255, 255, 255);
 }
 
 //--------------------------------------------------------------
@@ -26,10 +12,14 @@ void ofApp::update(){
 }
 
 //--------------------------------------------------------------
-void ofApp::draw() {
-	for (int i = 0; i < 1000; i++) {
-		ofDrawLine(start_x[i], start_y[i], end_x[i], end_y[i]);
+void ofApp::draw(){
+	ofSetColor(60, 132, 230);
+	ofFill();
+	for (int i = 0; i < 19999; i++) {
+		ofDrawCircle(ofGetWidth() / 2, ofGetHeight() / 2, 10);
+		ofRotate(60);
 	}
+	
 }
 
 //--------------------------------------------------------------
